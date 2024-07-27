@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .main__nav {
+        width: 100%;
+        background-color: #000000;
+        color: #FAFAFA;
+        gap: 8px;
+        padding: 15px;
+  
+        select {
+            background: #000000;
+            color: #FAFAFA;
+            border: none;
+        }
+        .text_content {
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 400;
+            font-family: Poppins;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            a {
+            text-align: center;
+            text-decoration: underline;
+            &:hover {
+                color: #d8d7d7;
+            }
+            }
+        }
+    }
+    .nav {
+        border-bottom: 2px solid #0002;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9px;
+        margin-top: 20px;
+        b {
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 700;
+            color: #000000;
+        }
+        .nav__collection {
+            display: flex;
+            gap: 50px;
+            .nav__item{
+                color: #000000;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                &:hover{
+                    border-bottom: 1px solid #000000;
+                }
+            }
+        }
+        .nav__inputs {
+            display: flex;
+            gap: 34px;
+            .nav__form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 5px;
+                background: #F5F5F5;
+                padding: 7px 16px;
+                .nav__inp {
+                    opacity: .8;
+                    border: none;
+                    background: inherit;
+                }
+            }
+            .nav__icon {
+                display: flex;
+                gap: 25px;
+            }
+        }
+    }
+}
+    
