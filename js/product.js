@@ -4,7 +4,6 @@ const content = document.querySelector(".content");
 async function fetchSingleData(api) {
   let query = new URLSearchParams(window.location.search);
   let id = query.get("id");
-  //    console.log(query);
   let response = await fetch(`${api}/products/${id}`);
   response
     .json()
@@ -26,10 +25,10 @@ function createContent(data) {
                 <div class="context">
                     <h2>${data.title}</h2>
                     <div class="rating">
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
+                        <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
+                        <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
+                        <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
                         <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
                         <p>${data.rating}</p>
                         <p>|</p>

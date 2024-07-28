@@ -53,12 +53,12 @@ function createCard(data) {
                     <h3>${product.title}</h3>
                     <div class="price">
                         <h4>${product.price}$</h4>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
-                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
                         <i class="fa-regular fa-star" style="color: #7b7974;"></i>
                         <i class="fa-regular fa-star" style="color: #7b7974;"></i>
-                        <p>(35)</p>
+                        <i class="fa-regular fa-star" style="color: #7b7974;"></i>
+                        <i class="fa-regular fa-star" style="color: #7b7974;"></i>
+                        <i class="fa-regular fa-star" style="color: #7b7974;"></i>
+                        <p>(50)</p>
                     </div>
        
         `;
@@ -96,7 +96,6 @@ collection.addEventListener("click", (e) => {
 
 wrapper.addEventListener("click", (e) => {
   const t = e.target.closest(".card");
-  // console.log(t);
   const id = t.dataset.id;
   if (e.target.tagName === "IMG") {
     console.log(t);
@@ -106,12 +105,3 @@ wrapper.addEventListener("click", (e) => {
   }
 });
 
-// function showSidebar() {
-//   const sidebar = document.querySelector(`.sidebar`);
-//   sidebar.style.display = `flex`;
-// }
-
-// function hideSidebar() {
-//   const sidebar = document.querySelector(`.sidebar`);
-//   sidebar.style.display = `none`;
-// }
