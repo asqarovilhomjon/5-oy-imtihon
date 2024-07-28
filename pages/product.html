@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+
+    <section class="discount ">
+        <div class="container">
+          <div class="discount__box">
+            <div class="discount__wrapper from-top">
+              <p>
+                Summer Sale For All Swim Suits And Free Express Delivery - OFF
+                50%!
+              </p>
+              <a href="">Shop now</a>
+            </div>
+            <div class="langs from-top">
+              <select name="langs" id="langs">
+                <option value="English">English</option>
+                <option value="Russia">Russia</option>
+                <option value="Korea">Korea</option>
+                <option value="Mongolia">Mongolia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <header class="header">
+        <div class="container">
+          <nav class="navbar from-top">
+            <div class="navbar__logo">
+              <img src="../assets/Logo.png" alt="" />
+            </div>
+            <ul class="sidebar">
+              <li onclick="hideSidebar()">
+                <a href="#"><i class="fa-solid fa-delete-left fa-shake"></i></a>
+              </li>
+              <li class="navbar__item"><a href="#">Home</a></li>
+              <li class="navbar__item"><a href="#">Contact</a></li>
+              <li class="navbar__item"><a href="#">About</a></li>
+              <li class="navbar__item"><a href="#">Sign in</a></li>
+            </ul>
+            <div class="navbar__box">
+              <ul class="navbar__collection">
+                <li class="navbar__item"><a href="#">Home</a></li>
+                <li class="navbar__item"><a href="#">Contact</a></li>
+                <li class="navbar__item"><a href="#">About</a></li>
+                <li class="navbar__item"><a href="#">Sign in</a></li>
+              </ul>
+              <div class="search">
+                <div class="navbar__input">
+                  <input type="text" placeholder="what are you looking for?" />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+            <li class="menu__btn" onclick="showSidebar()">
+              <a href="#"><i class="fa-solid fa-bars"></i></a>
+            </li>
+          </nav>
+        </div>
+      </header>
+
+    <section class="data">
+        <div class="container">
+            <div class="content">
+                <!-- <div class="content__img">
+                    <img src="${data.images[0]}" alt="">
+                    ${data.images.map(
+                      (item) => ( `<img class="little" width="80" src=${item} alt=""></img>`
+                    ))
+                  }
+                </div>
+                <div class="context">
+                    <h2>Havic HV G-92 Gamepad</h2>
+                    <div class="rating">
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #f0ece0;"></i>
+                        <p>(150 Reviews)</p>
+                        <p>|</p>
+                        <p class="green">In Stock</p>
+                    </div>
+                    <h2>$192.00</h2>
+                    <p>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
+                    <hr>
+                    <h3>Colours: <div></div></h3>
+                    <div class="sizes">
+                        Size:
+                        <div class="size">X</div>
+                        <div class="size">Xl</div>
+                        <div class="size">S</div>
+                        <div class="size">XS</div>
+                        <div class="size">M</div>
+                    </div>
+                    <div class="how__many">
+                        <div class="plus">+
+                        </div>
+                        <div class="son">0</div>
+                        <div class="plus">-</div>
+                        <button>Buy now</button>
+                        <div class="plus"><i class="fa-regular fa-heart"></i></div>
+                    </div>
+                    <div class="delivery">
+                        <div class="free">
+                            <img src="../assets/icon-delivery (1).png" alt="">
+                            <div class="text">
+                                <h4>Free Delivery</h3>
+                                <p>Enter your postal code for Delivery Availability</p>
+                            </div>
+                        </div>
+                        <div class="free">
+                            <img src="../assets/Icon-return.png" alt="">
+                            <div class="text">
+                                <h4>Free Delivery</h3>
+                                <p>Enter your postal code for Delivery Availability</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="footer__card">
+              <h2>Exclusive</h2>
+              <h3>Subscribe</h3>
+              <p>Get 10% off your first order</p>
+              <div class="send">
+                <input type="text" placeholder="Enter your email">
+                <i class="fa-regular fa-paper-plane"></i>
+              </div>
+            </div>
+            <div class="footer__card">
+              <h2>Support</h2>
+              <p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
+              <p>exclusive@gmail.com</p>
+              <p>+88015-88888-9999</p>
+            </div>
+            <div class="footer__card">
+              <h2>Account</h2>
+              <p>My Account</p>
+              <p>Login / Register</p>
+              <p>Wishlist</p>
+              <p>Shop</p>
+            </div>
+            <div class="footer__card">
+              <h2>Quick Link</h2>
+              <p>Terms Of Use</p>
+              <p>Login / Register</p>
+              <p>Wishlist</p>
+              <p>Shop</p>
+            </div>
+            <div class="footer__card">
+              <h2>Download App</h2>
+              <p>Save $3 with App New User Only</p>
+              <div class="footer__qr">
+                <img src="../assets/Qr Code.png" alt="">
+                <div class="footer__gmail">
+                    <img src="../assets/AppStore.png" alt="">
+                    <img src="../assets/GooglePlay.png" alt="">
+                </div>
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h4>C: Copyright Rimel 2022. All right reserved</h4>
+        </div>
+      </footer>
+    
+
+
+    <script src="../js/product.js"></script>
+</body>
+</html>

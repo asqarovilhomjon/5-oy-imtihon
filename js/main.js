@@ -1,50 +1,117 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-    const productsBlock = document.getElementById('products__block');
-    const showMoreButton = document.getElementById('showMore');
-    let products = [];
-    let displayedProducts = 0;
+const API__URL = "https://dummyjson.com";
+const skeleton = document.querySelector(".skeleton");
+const wrapper = document.querySelector(".wrapper");
+const seemore = document.querySelector(".seemore");
+const collection = document.querySelector(".collection");
 
-    const fetchProducts = () => {
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(data => {
-                products = data;
-                displayProducts();
-            });
-    };
+for (let i = 0; i < 12; i++) {
+  let div = document.createElement("div");
+  div.classList.add("skeleton__item");
+  div.innerHTML = `
+                <div class="skeleton__image skeleton__anime"></div>
+                <div class="skeleton__line skeleton__anime"></div>
+                <div class="skeleton__line skeleton__anime"></div>
+                <div class="skeleton__line skeleton__anime"></div>
+    `;
+  skeleton.append(div);
+}
 
-    const displayProducts = () => {
-        const productsToShow = products.slice(displayedProducts, displayedProducts + 8);
-        productsToShow.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'products__card';
-            productCard.innerHTML = `
-                <div class="card__img">
-                    <button class="product__like"><i class="fa-regular fa-heart"></i></button>
-                    <button class="product__eye"><i class="fa-solid fa-eye"></i></button>
-                    <button class="product__add">Add To Cart</button>
-                    <img src="${product.image}" alt="${product.title}" />
-                </div>
-                <div class="card__text">
-                    <div class="card__content">
-                        <p class="card__name">${product.title}</p>
+let perPageCount = 8;
+let offset = 1;
+let category = "";
+async function fetchData(api, limit, category) {
+  let response = await fetch(`${api}/products${category}?limit=${limit}`);
+  response
+    .json()
+    .then((res) => createCard(res))
+    .catch((err) => console.log(err))
+    .finally(() => {
+      skeleton.style.display = "none";
+    });
+}
+
+fetchData(API__URL, perPageCount, category);
+
+function createCard(data) {
+  while (wrapper.firstChild) {
+    wrapper.firstChild.remove();
+  }
+  console.log(data.products[0]);
+  data.products.forEach((product) => {
+    let cardItem = document.createElement("div");
+    cardItem.classList.add("card");
+    cardItem.dataset.id = product.id;
+    cardItem.innerHTML = `
+                    <div class="img">
+                        <img src="${product.images[0]}" alt="">
+                        <div class="icons">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
                     </div>
-                    <div class="card__price">
-                        <p class="card__prices">$${product.price}</p>
-                        <div class="card__stars">${'★'.repeat(Math.round(product.rating.rate))}</div>
+                    <button class="btn">Add To Cart</button>
+                    <h3>${product.title}</h3>
+                    <div class="price">
+                        <h4>${product.price}$</h4>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-regular fa-star" style="color: #7b7974;"></i>
+                        <i class="fa-regular fa-star" style="color: #7b7974;"></i>
+                        <p>(35)</p>
                     </div>
-                </div>
-            `;
-            productsBlock.appendChild(productCard);
-        });
-        displayedProducts += 8;
-        if (displayedProducts >= products.length) {
-            showMoreButton.style.display = 'none';
-        }
-    };
+       
+        `;
+    wrapper.appendChild(cardItem);
+  });
+}
 
-    showMoreButton.addEventListener('click', displayProducts);
-
-    fetchProducts();
+seemore.addEventListener("click", () => {
+  offset++;
+  fetchData(API__URL, perPageCount * offset, category);
 });
+async function fetchCategory(api) {
+  let response = await fetch(`${api}/products/category-list`);
+  response.json().then((res) => createCategory(res));
+}
+fetchCategory(API__URL);
+
+function createCategory(data) {
+  data.forEach((category) => {
+    let list = document.createElement("li");
+    list.className = "item";
+    list.innerHTML = `
+          <data value="/category/${category}">${category}</data>
+          `;
+    collection.appendChild(list);
+  });
+}
+collection.addEventListener("click", (e) => {
+  if (e.target.tagName === "DATA") {
+    let val = e.target.value;
+    let category = val;
+    fetchData(API__URL, perPageCount * offset, category);
+  }
+});
+
+wrapper.addEventListener("click", (e) => {
+  const t = e.target.closest(".card");
+  // console.log(t);
+  const id = t.dataset.id;
+  if (e.target.tagName === "IMG") {
+    console.log(t);
+    window.open(`./pages/product.html?id=${id}`, "_self");
+  } else if (e.target.closest(".link")) {
+    window.open(`./pages/product.html?id=${id}`, "_self");
+  }
+});
+
+// function showSidebar() {
+//   const sidebar = document.querySelector(`.sidebar`);
+//   sidebar.style.display = `flex`;
+// }
+
+// function hideSidebar() {
+//   const sidebar = document.querySelector(`.sidebar`);
+//   sidebar.style.display = `none`;
+// }

@@ -1,221 +1,352 @@
-.box {
-  display: flex;
-  gap: 20px;
-  margin-top: 60px;
-  margin-bottom: auto;
-  // align-items: center;
-  // justify-content: center;
-}
-
-.card__foto {
-  width: 100%;
-}
-
-.content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.theme {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.title {
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 600;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-
-.box__icon {
-  display: flex;
-  justify-content: space-between;
-}
-
-.box__star {
-  color: #FFAD33;
-}
-
-.rating {
-  font-size: 14px;
-  color: #000000;
-}
-
-.category {
-  font-size: 14px;
-  color: #00FF66;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-}
-
-.rect {
-  font-size: 14px;
-  color: #000000;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.pric {
-  font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-}
-
-.box__colors {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-}
-
-.box__btr {
-  display: flex;
-  gap: 10px;
-}
-
-.box__size,.math {
-  width: 32px;
-  height: 32px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  background: transparent;
-  border: 1px solid #ddd;
-}
-
-.box__size:hover {
-  background: #DB4444;
-  cursor: pointer;
-  color: #fff;
-}
-
-.box__p {
-  font-size: 18px;
-}
-.number{
-  width: 80px;
-  height: 32px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  border: 1px solid #ddd;
-  background: transparent;
-}
-.math:hover {
-  background: #DB4444;
-  cursor: pointer;
-  color: #fff;
-}
-.now{
-  padding: 5.5px 48px;
-  font-size: 15px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 600;
-  border: 1px solid #ddd;
-  background: #DB4444;
-  color: #fff;
-  border-radius: 4px;
-}
-.heart{
-  width: 32px;
-  height: 32px;
-  border: 1px solid #ddd;
-  background: transparent;
-}
-.box__shop{
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  border-radius: 4px;
-}
-.box__free{
-  width: 399px;
-  height: 180px;
-  border-radius: 4px;
-  border: 1px solid #00000054;
-  display: flex;
-  flex-direction: column;
+.product{
+  margin-bottom: 160px;
+  .wrapper{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @media (max-width:1200px) {
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          grid-gap: 10px;
+      }
+      @media (max-width:900px) {
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          grid-gap: 10px;
+      }
+      @media (max-width:600px) {
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          grid-gap: 10px;
+      }
+      .card{
+          width: 30%;
+          font-family: sans-serif;
+          display: flex;
+          padding-bottom: 30px;
+          flex-direction: column;
+          gap: 10px;
+          border-radius: 5px;
+          @media (max-width:900px) {
+              width: 100%;
+          }
+          @media (max-width:700px) {
+              width: 100%;
+              
+          }
+          
+          .img{
+              overflow: hidden;
+                  border-radius: 5px;
+                  width: 300px;
+                  height: 300px;
+                  background: #ddd;
+                  align-items: center;
+                  padding: 30px;
+                  @media (max-width:700px) {
+                      width: 100%;
+                  }
+                  img{
+                      overflow: hidden;
+                      width: 100%;
+                      transition: .5s;
+                      cursor: pointer;
+                      &:hover{
+                          transform: scale(1.1);
+                      }
+                  }
+              }
+             
+              h3{
+                  margin-top: -50px;
+              }
+              p{
+                  color: gray;
+              }
+              .icons{
+                  
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                  position: relative;
+                  left: 220px;
+                  top: -270px;
+                  @media (max-width:900px) {
+                      display: none;
+                  }
+                  i{
+                      transition: .3s;
+                      padding: 7px;
+                      width: 30px;
+                      height: 30px;
+                      background: #fff9;
+                      border-radius: 50%;
+                      &:hover{
+                          background: #DB4444;
+                          color: #fff;
+                          cursor: pointer;
+                      }
+                  }
+              }
+              h3{
+                  width: 300px;
+              }
+              button{
+                  width: 300px;
+                  background: black;
+                  height: 38px;
+                  color: #fff;
+                  border: none;
+                  opacity: 0;
+                  transition: .5s;
+                  &:hover{
+                      opacity: 1;
+                      transform: translateY(-50px);
+                      height: 38px;
+                  }
+                  
+              }
+                   
+          .price{
+              display: flex;
+              gap: 7px;
+              h4{
+                  color: #DB4444;
+              }
+             
+          }
+      }
+  }
   
 }
-.box__diliver{
-  display:flex;
-  gap: 16px;
-  align-items: center;
-  padding: 24px 51px 24px 16px;
-}
-.box__desc{
-  font-size: 12px;
-  color: #000000;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-}
-.hr{
-  width: 100%;
-}
-.foto{
+.content{
   display: flex;
-  margin: 40px auto;
-  width: 300px;
+  margin-bottom: 200px;
+  // border: 2px solid red;
+  width: 100%;
+  height: 600px;
+  @media (max-width:700px) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1000px;
+  }
+  &__img{
+      width: 50%;
+      margin-top: 100px;
+      display: flex;
+     
+      @media (max-width:700px) {
+          display: flex;
+          flex-direction: column-reverse;
+          width: 100%;
+          margin-top: -50px;
+      }
+      img{
+          height: 460px;
+
+      }
+  }
+  .context{
+      width: 40%;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: sans-serif;
+      @media (max-width:700px) {
+          width: 100%;
+      }
+      .rating{
+          cursor: pointer;
+          display: flex;
+          gap: 10px;
+          p{
+              color: gray;
+          }
+          .green{
+              color: greenyellow;
+          }
+      }
+      h3{
+          font-weight: 600;
+          display: flex;
+          gap: 10px;
+          
+          div{
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: red;
+          }
+          .blue{
+              background: blue;
+
+          }
+         
+      }
+      .sizes{
+          display: flex;
+          gap: 10px;
+          .size{
+              width: 30px;
+              height: 20px;
+              border: 1px solid #ddd;
+              text-align: center;
+              cursor: pointer;
+              &:hover{
+                  background: red;
+                  color: #fff;
+              }
+          }
+      }
+      .how__many{
+          display: flex;
+          .plus{
+              width: 40px;
+              height: 20px;
+              border: 1px solid #ddd;
+              text-align: center;
+              cursor: pointer;
+              &:hover{
+                  background: red;
+                  color: #fff;
+              }
+          }
+          .son{
+              width: 70px;
+              text-align: center;
+              height: 20px;
+              border: 1px solid #ddd;
+             
+          }
+          button{
+              width: 100px;
+              height: 20px;
+              background: red;
+              border: none;
+              color: #fff;
+              margin-left: 30px;
+              margin-right: 20px;
+          }
+      }
+      .delivery{
+          display: flex;
+          flex-direction: column;
+          width: 400px;
+          height: 150px;
+          border: none;
+          @media (max-width:800px) {
+              width: 300px;
+          }
+          
+          .free{
+              padding: 20px;
+              display: flex;
+              gap: 20px;
+              border: 2px solid #ddd;
+              img{
+                  width: 50px;
+                  height: 40px;
+              }
+          }
+      }
+  }
+  .little{
+      width: 80px;
+      height: 100px;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+  }
 }
-.Return{
-  font-weight: 600;
-  font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.seemore{
+  background: red;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  width: 400px;
+  height: 50px;
+  margin-top: 30px;
+  transition: .3s;
+  cursor: pointer;
+  @media (max-width:540px) {
+      width: 200px;
 }
-.box__wrapper{
+}
+
+
+
+
+
+
+
+.collection {
+  display: flex;
+  list-style: none;
+  overflow: auto;
+  padding: 10px 50px;
+  gap: 20px;
+  cursor: pointer;
+  /* font-size: 19px; */
+}
+.collection li{
+  width: 200px;
+  padding: 7px;
+  // border: 1px solid #0002;
+  border-radius: 6px;
+}
+.item{
+  white-space: nowrap;
+  transition: .3s;
+}
+.item:hover{
+  color: red;
+  transform: scale(1.1);
+}
+
+
+.skeleton{
+  padding: 50px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.skeleton__item{
+  width: 350px;
+  padding: 20px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 40px;
+  gap: 20px;
+  transition: .3s;
 }
-.chek{
-  font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 600;
+.skeleton__image{
+  width: 100%;
+  height: 250px;
+  background: #ddd;
+  border-radius: 14px;
 }
-@media (max-width:900px) {
-  .box{
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-  }
-  .foto{
-      width: 200px;
-  }
-  .card__foto{
-      width: 100%;
-      justify-content: center;
-      display: flex;
-  }
+.skeleton__line{
+  width: 100%;
+  height: 30px;
+  background: #ddd;
+  border-radius: 6px;
 }
-@media (max-width:450px) {
-  .box__shop{
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: start;
-  }
-  .box__free{
-      width: 340px;
-      height: 180px;
-      border-radius: 4px;
-      border: 1px solid #00000054;
-      display: flex;
-      flex-direction: column;
-      
-  }
-  .box__diliver{
-      display:flex;
-      gap: 16px;
-      align-items: center;
-      padding: 24px 0px 24px 16px;
+.skeleton__line:nth-child(3){
+  width: 80%;
+}
+.skeleton__line:nth-child(4){
+  width: 60%;
+}
+.skeleton__anime{
+  background: linear-gradient(90deg,#ddd,#f7f7f7,#ddd);
+  background-size: 200%;
+  animation: skeleton .7s linear 0s infinite;
+}
+@keyframes skeleton {
+  to{
+      background-position: 200%;
   }
 }
+
